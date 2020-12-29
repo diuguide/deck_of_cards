@@ -1,4 +1,6 @@
 var $container = document.getElementById('container');
+let shuffle =  document.getElementById('shuffle');
+let dealOne = document.getElementById('dealOne');
 
 // create Deck
 var deck = Deck();
@@ -6,7 +8,11 @@ var deck = Deck();
 // add to DOM
 deck.mount($container);
 
-deck.shuffle();
+shuffle.addEventListener('click', () => {
+    deck.shuffle();
+})
+
+
 deck.cards.forEach(function (card, i) {
     card.setSide('back');
     card.enableDragging();
